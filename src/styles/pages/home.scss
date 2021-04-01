@@ -1,0 +1,7 @@
+.home {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  &__sidebar {
+    box-shadow: 5px 10px 400px #303233;
+  }
+}

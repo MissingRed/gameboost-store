@@ -1,0 +1,57 @@
+.sidebar {
+  height: 100vh;
+  padding: 1.2rem 2rem 1.2rem 2rem;
+  &__title {
+    font-size: 1.5rem;
+    margin: 0;
+    letter-spacing: 3px;
+    font-weight: 500;
+  }
+  &__container {
+    height: calc(100% - 4.6875rem);
+    margin-top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    &__list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      &__item {
+        color: #767884;
+        font-weight: 500;
+        margin-bottom: 2.5rem;
+        display: flex;
+
+        &__img {
+          margin-right: 15px;
+        }
+        &__a {
+          text-decoration: none;
+          color: #767884;
+          font-weight: 500;
+          margin: 0;
+          outline: none;
+          &.selected {
+            color: #feb100;
+          }
+        }
+      }
+    }
+    &__user {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+      &__img {
+        width: 30px;
+        border-radius: 50%;
+        margin-right: 10px;
+      }
+      &__name {
+        margin: 0;
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
