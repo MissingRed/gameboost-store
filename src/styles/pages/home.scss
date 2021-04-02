@@ -2,6 +2,56 @@
   display: grid;
   grid-template-columns: 240px 1fr;
   &__sidebar {
-    box-shadow: 5px 10px 400px #303233;
+    box-shadow: var(--shadow);
+  }
+  &__content {
+    display: grid;
+    grid-template-rows: 70px auto;
+    &__searchNav {
+      padding: 0.9375rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--filer);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      backdrop-filter: saturate(180%) blur(20px);
+      position: sticky;
+      top: 0;
+      &__container {
+        width: 30%;
+        min-width: 220px;
+        background: var(--backgroud-grey-white);
+        transition: background 0.3s ease-in-out, color 0.6s ease-in-out;
+        border-radius: 7px;
+        font-weight: bold;
+        font-size: small;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        height: 100%;
+        &__svg {
+          width: 25px;
+          stroke: var(--text-color-search);
+          height: 100%;
+        }
+        &__input {
+          width: calc(100% - 60px);
+          border-radius: 15px;
+          border: 0;
+          outline: none;
+          margin-left: 10px;
+          background: var(--backgroud-grey-white);
+          transition: background 0.3s ease-in-out, color 0.6s ease-in-out;
+          color: var(--text-color-search);
+          font-weight: 600;
+
+          &::placeholder {
+            font-weight: 600;
+            font-family: "Poppins", sans-serif;
+            color: var(--text-color-search);
+          }
+        }
+      }
+    }
   }
 }

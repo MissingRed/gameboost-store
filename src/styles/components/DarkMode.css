@@ -1,0 +1,70 @@
+:root {
+    --black: #101113;
+    --white: white;
+    --grey: #4e4e4e;
+    --opac: #767884;
+    --filter-dark: rgba(16, 17, 19, 0.8);
+    --filter-white: rgba(255, 255, 255, 0.7);
+    --font-sidebar: #767884;
+    --box-shadow-dark: 5px 10px 400px #303233;
+    --box-shadow-white: 5px 10px 400px #30323367;
+    --profile-dark: #4e4e4e;
+    --profile-white: #e4e4e4;
+}
+
+#darkMode {
+    background: transparent url(https://firebasestorage.googleapis.com/v0/b/codeshopdata.appspot.com/o/Icons%2Fsun.svg?alt=media&token=7bbb1eaa-9878-4eeb-808f-252ec4baf7aa) no-repeat center;
+    background-size: 25px 25px;
+    width: 40px;
+    height: 40px;
+    filter: grayscale(100%);
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out, filter 0.3s ease-in-out;
+    outline: none;
+    background-color: white;
+}
+
+#darkMode:hover {
+    filter: none;
+    background-color: black;
+    cursor: pointer;
+}
+
+#darkMode.clicked {
+    filter: none !important;
+    background-color: black;
+}
+
+body.light {
+    --background-color: var(--white);
+    --text-color: var(--black);
+    --backgroud-grey-white: var(--opac);
+    --backgroud-grey: var(--profile-white);
+    --text-color-search: var(--white);
+    --font-weight: 400;
+    --shadow: var(--box-shadow-white);
+    --profile: var(--profile-white);
+    --filer: var(--filter-white);
+    --image: url(https://firebasestorage.googleapis.com/v0/b/codeshopdata.appspot.com/o/Icons%2Fsun.svg?alt=media&token=7bbb1eaa-9878-4eeb-808f-252ec4baf7aa);
+}
+
+body.dark {
+    --background-color: var(--black);
+    --backgroud-grey: var(--grey);
+    --text-color: var(--white);
+    --backgroud-grey-white: var(--white);
+    --text-color-search: var(--font-sidebar);
+    --shadow: var(--box-shadow-dark);
+    --font-weight: 400;
+    --profile: var(--profile-dark);
+    --filer: var(--filter-dark);
+    --image: url(https://firebasestorage.googleapis.com/v0/b/codeshopdata.appspot.com/o/Icons%2Fsun.svg?alt=media&token=7bbb1eaa-9878-4eeb-808f-252ec4baf7aa);
+}
+
+body {
+    background: var(--background-color);
+    color: var(--text-color);
+    font-weight: var(--font-weight);
+    transition: background 0.3s ease-in-out, color 0.6s ease-in-out;
+}
