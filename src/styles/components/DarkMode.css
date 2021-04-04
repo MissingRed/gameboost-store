@@ -1,15 +1,12 @@
 :root {
     --black: #101113;
     --white: white;
-    --grey: #4e4e4e;
-    --opac: #767884;
+    --blue-white: #767884;
     --filter-dark: rgba(16, 17, 19, 0.8);
     --filter-white: rgba(255, 255, 255, 0.7);
     --font-sidebar: #767884;
     --box-shadow-dark: 5px 10px 400px #303233;
     --box-shadow-white: 5px 10px 400px #30323367;
-    --profile-dark: #4e4e4e;
-    --profile-white: #e4e4e4;
 }
 
 #darkMode {
@@ -39,8 +36,7 @@
 body.light {
     --background-color: var(--white);
     --text-color: var(--black);
-    --backgroud-grey-white: var(--opac);
-    --backgroud-grey: var(--profile-white);
+    --backgroud-grey-white: var(--blue-white);
     --text-color-search: var(--white);
     --font-weight: 400;
     --shadow: var(--box-shadow-white);
@@ -51,13 +47,11 @@ body.light {
 
 body.dark {
     --background-color: var(--black);
-    --backgroud-grey: var(--grey);
     --text-color: var(--white);
     --backgroud-grey-white: var(--white);
     --text-color-search: var(--font-sidebar);
     --shadow: var(--box-shadow-dark);
     --font-weight: 400;
-    --profile: var(--profile-dark);
     --filer: var(--filter-dark);
     --image: url(https://firebasestorage.googleapis.com/v0/b/codeshopdata.appspot.com/o/Icons%2Fsun.svg?alt=media&token=7bbb1eaa-9878-4eeb-808f-252ec4baf7aa);
 }

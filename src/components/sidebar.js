@@ -2,7 +2,7 @@ import React from "react";
 import "../styles/components/sidebar.scss";
 import { NavLink } from "react-router-dom";
 
-const sidebar = () => {
+const Sidebar = () => {
   return (
     <div className="sidebar">
       <h1 className="sidebar__title">GAMEBOOST</h1>
@@ -65,4 +65,4 @@ const sidebar = () => {
   );
 };
 
-export default sidebar;
+export default Sidebar;

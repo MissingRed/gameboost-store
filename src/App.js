@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import home from "./pages/home";
+import GameOpen from "./pages/gameOpen";
 
 const App = () => {
   return (
@@ -8,6 +9,7 @@ const App = () => {
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={home} />
+          <Route exact path="/Game/:id" component={GameOpen} />
         </Switch>
       </BrowserRouter>
     </>
