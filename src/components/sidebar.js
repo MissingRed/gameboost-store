@@ -10,7 +10,7 @@ const Sidebar = () => {
         <ul className="sidebar__container__list">
           <li className="sidebar__container__list__item">
             <img
-              src="./icons/shopping-bag.svg"
+              src="../icons/shopping-bag.svg"
               alt="store"
               className="sidebar__container__list__item__img"
             />
@@ -23,7 +23,7 @@ const Sidebar = () => {
           </li>
           <li className="sidebar__container__list__item">
             <img
-              src="./icons/bookmark.svg"
+              src="../icons/bookmark.svg"
               alt="favorites"
               className="sidebar__container__list__item__img"
             />
@@ -33,7 +33,7 @@ const Sidebar = () => {
           </li>
           <li className="sidebar__container__list__item">
             <img
-              src="./icons/user.svg"
+              src="../icons/user.svg"
               alt="profile"
               className="sidebar__container__list__item__img"
             />
@@ -43,7 +43,7 @@ const Sidebar = () => {
           </li>
           <li className="sidebar__container__list__item">
             <img
-              src="./icons/shopping-cart.svg"
+              src="../icons/shopping-cart.svg"
               alt="purchases"
               className="sidebar__container__list__item__img"
             />

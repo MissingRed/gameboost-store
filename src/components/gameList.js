@@ -14,8 +14,9 @@ const GameList = () => {
           const name = game.Nombre;
           const price = game.Precio;
           const cover = game.Caratula;
+          const caratula = `http://localhost:1337${cover.url}`;
 
-          array.push({ id, name, price, cover });
+          array.push({ id, name, price, caratula });
           return true;
         });
         setGames(array);
@@ -38,7 +39,7 @@ const GameList = () => {
             key={res.id}
             name={res.name}
             price={res.price}
-            cover={res.cover}
+            cover={res.caratula}
             link={res.id}
           />
         ))}
