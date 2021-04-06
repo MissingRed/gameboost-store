@@ -1,13 +1,28 @@
+@import "./media-querys";
+
 .home {
   display: grid;
   grid-template-columns: 240px 1fr;
+  @include tablet {
+    grid-template-columns: 1fr;
+    grid-template-rows: 70px 1fr;
+    height: 100vh;
+  }
+
   &__sidebar {
     box-shadow: var(--shadow);
+    @include tablet {
+      z-index: 9000;
+    }
   }
   &__content {
     display: grid;
     grid-template-rows: 70px 0.5fr 1fr auto;
     height: 100vh;
+    @include tablet {
+      grid-template-rows: 70px 0.5fr;
+      height: auto;
+    }
     &__searchNav {
       padding: 0.9375rem;
       display: flex;
@@ -18,6 +33,10 @@
       backdrop-filter: saturate(180%) blur(20px);
       position: sticky;
       top: 0;
+      z-index: 9000;
+      @include tablet {
+        z-index: 8000;
+      }
       &__container {
         width: 30%;
         min-width: 220px;
@@ -30,6 +49,9 @@
         display: flex;
         justify-content: center;
         height: 100%;
+        @include tablet {
+          width: 85%;
+        }
         &__svg {
           width: 25px;
           stroke: var(--text-color-search);
@@ -59,6 +81,10 @@
       padding: 1.25rem;
       grid-template-columns: 1fr 1fr 1fr;
       grid-gap: 30px;
+      @include tablet {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+      }
       &__item {
         height: 100%;
         cursor: pointer;
@@ -94,6 +120,9 @@
       grid-template-rows: 1fr;
       padding: 1.25rem;
       grid-gap: 30px;
+      @include tablet {
+        display: none;
+      }
       &__item {
         height: 100%;
         &__figure {

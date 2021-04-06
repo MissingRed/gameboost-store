@@ -1,9 +1,21 @@
+@import "../pages/media-querys.scss";
+
 .gameList {
   padding: 1.25rem;
+  &__title {
+    margin-top: 0;
+    margin-bottom: 2rem;
+    @include tablet {
+      text-align: center;
+    }
+  }
   &__container {
     display: grid;
     grid-template-columns: repeat(auto-fill, 230px);
     grid-gap: 2em;
     justify-content: space-between;
+    @include tablet {
+      justify-content: center;
+    }
   }
 }

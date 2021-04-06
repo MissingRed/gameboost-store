@@ -1,13 +1,22 @@
+@import "../pages/media-querys.scss";
+
 .sidebar {
   height: 100vh;
   padding: 1.2rem 2rem 1.2rem 2rem;
   position: sticky;
   top: 0;
+
+  @include tablet {
+    height: auto;
+  }
   &__title {
     font-size: 1.5rem;
     margin: 0;
     letter-spacing: 3px;
     font-weight: 500;
+    @include tablet {
+      text-align: center;
+    }
   }
   &__container {
     height: calc(100% - 4.6875rem);
@@ -15,6 +24,9 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    @include tablet {
+      display: none;
+    }
     &__list {
       list-style: none;
       padding: 0;

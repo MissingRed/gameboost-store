@@ -32,7 +32,7 @@ const GameList = () => {
 
   return (
     <div className="gameList">
-      <h2>Others</h2>
+      <h2 className="gameList__title">Others</h2>
       <div className="gameList__container">
         {games.map((res) => (
           <Game
