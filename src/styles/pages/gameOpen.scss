@@ -5,6 +5,8 @@
   height: 100vh;
   &__figure {
     background-size: cover;
+    display: flex;
+    justify-content: space-between;
     &__shadow {
       width: 40%;
       height: 100%;
@@ -24,8 +26,30 @@
         object-fit: cover;
       }
     }
+
+    &__lateral {
+      height: 100%;
+      padding: 0.9375rem;
+      &__darkMode {
+        display: none;
+      }
+    }
   }
   &__options {
-    background: #4e4e4e;
+    background: #202020;
+    &__list {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      padding-left: 2rem;
+      &__item {
+        list-style: none;
+        margin-right: 3rem;
+        font-size: small;
+        letter-spacing: 2px;
+      }
+    }
   }
 }

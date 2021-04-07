@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Sidebar from "../components/sidebar";
 import "../styles/pages/gameOpen.scss";
+import DarkMode from "../components/DarkMode";
 
 const GameOpen = () => {
   let { id } = useParams();
@@ -69,8 +70,21 @@ const GameOpen = () => {
                 />
                 <p>{game.Descripcion}</p>
               </div>
+              <div className="gameOpen__figure__lateral">
+                <div className="gameOpen__figure__lateral__darkMode">
+                  <DarkMode />
+                </div>
+              </div>
             </div>
-            <div className="gameOpen__options"></div>
+            <div className="gameOpen__options">
+              <ul className="gameOpen__options__list">
+                <li className="gameOpen__options__list__item">RESUMEN</li>
+                <li className="gameOpen__options__list__item">DESCRIPCIÓN</li>
+                <li className="gameOpen__options__list__item">
+                  REQUISITOS DEL SISTEMA
+                </li>
+              </ul>
+            </div>
             <div className="gameOpen__info"></div>
           </div>
         )}

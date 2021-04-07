@@ -2,12 +2,18 @@
 
 .sidebar {
   height: 100vh;
-  padding: 1.2rem 2rem 1.2rem 2rem;
   position: sticky;
   top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   @include tablet {
     height: auto;
+  }
+  &__padding {
+    padding: 1.2rem 2rem 1.2rem 2rem;
+    height: 100%;
   }
   &__title {
     font-size: 1.5rem;
@@ -19,7 +25,6 @@
     }
   }
   &__container {
-    height: calc(100% - 4.6875rem);
     margin-top: 2.5rem;
     display: flex;
     flex-direction: column;
@@ -27,6 +32,7 @@
     @include tablet {
       display: none;
     }
+
     &__list {
       list-style: none;
       padding: 0;
@@ -56,15 +62,34 @@
     &__user {
       display: flex;
       align-items: center;
-      margin-bottom: 1rem;
+      background: #48484870;
+      padding: 1.25rem;
+      justify-content: space-between;
+      @include tablet {
+        display: none;
+      }
+      &__content {
+        display: flex;
+        align-items: center;
+      }
       &__img {
         width: 30px;
+
         border-radius: 50%;
         margin-right: 10px;
       }
       &__name {
         margin: 0;
-        font-size: 0.9rem;
+        font-size: 0.8rem;
+        font-weight: 500;
+      }
+      &__view {
+        margin: 0;
+        font-size: 0.7rem;
+        color: #a7a7a7;
+      }
+      &__up {
+        width: 23px;
       }
     }
   }
