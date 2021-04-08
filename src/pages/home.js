@@ -1,18 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/pages/home.scss";
 import Sidebar from "../components/sidebar";
 import DarkMode from "../components/DarkMode";
 import GameList from "../components/gameList";
 
 const Home = () => {
+  const [search, setSearch] = useState("");
+
   return (
     <>
-      <div className="home">
+      <div className="home ">
         <div className="home__sidebar">
           <Sidebar />
         </div>
         <div>
-          <div className="home__content">
+          <div className="home__content animate__animated animate__fadeIn animate__faster">
             <div className="home__content__searchNav">
               <div className="home__content__searchNav__container">
                 <svg
@@ -32,8 +34,9 @@ const Home = () => {
                 </svg>
                 <input
                   type="text"
-                  placeholder="Search Games"
+                  placeholder="Search games"
                   className="home__content__searchNav__container__input"
+                  onChange={(e) => setSearch(e.target.value)}
                 />
               </div>
               <DarkMode />
@@ -97,7 +100,7 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <GameList />
+          <GameList search={search} />
         </div>
       </div>
     </>

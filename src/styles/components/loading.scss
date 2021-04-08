@@ -1,0 +1,13 @@
+.loading {
+  background: var(--background-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  &__darkMode {
+    display: none;
+  }
+  &__loop {
+    width: 7rem;
+  }
+}

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import app from "./base.js";
+import Loading from "../components/loading";
 export const AuthContext = React.createContext();
 
 export const AuthProvider = ({ children }) => {
@@ -16,9 +17,7 @@ export const AuthProvider = ({ children }) => {
   if (pending) {
     return (
       <>
-        <div>
-          <h1>Cargando...</h1>
-        </div>
+        <Loading />
       </>
     );
   }

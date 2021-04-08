@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import "../styles/components/sidebar.scss";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../database/auth";
@@ -6,6 +6,7 @@ import app from "../database/base.js";
 
 const Sidebar = () => {
   const { currentUser } = useContext(AuthContext);
+  const [openProfile, setOpenProfile] = useState(false);
 
   return (
     <div className="sidebar">
@@ -57,9 +58,15 @@ const Sidebar = () => {
               </NavLink>
             </li>
           </ul>
-          <button onClick={() => app.auth().signOut()}>Log Out</button>
         </div>
       </div>
+      {openProfile ? (
+        <div className="sidebar__container__user__modal">
+          <button onClick={() => app.auth().signOut()}>Log Out</button>
+        </div>
+      ) : (
+        ""
+      )}
       <div className="sidebar__container__user">
         <div className="sidebar__container__user__content">
           <img
@@ -71,13 +78,13 @@ const Sidebar = () => {
             <p className="sidebar__container__user__name">
               {currentUser.displayName}
             </p>
-            <p className="sidebar__container__user__view">View profile</p>
           </div>
         </div>
         <img
           src="../icons/up.svg"
           alt="up"
           className="sidebar__container__user__up"
+          onClick={() => setOpenProfile(!openProfile)}
         />
       </div>
     </div>

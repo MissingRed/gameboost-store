@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "../styles/components/gameList.scss";
 import Game from "../components/game";
-const GameList = () => {
+
+const GameList = ({ search }) => {
   const [games, setGames] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [filteredGames, setFilteredGames] = useState([]);
 
   const allGames = () => {
     fetch("http://localhost:1337/juegos")
@@ -20,6 +23,7 @@ const GameList = () => {
           return true;
         });
         setGames(array);
+        setLoading(false);
       })
       .catch((err) => {
         console.log(err);
@@ -30,22 +34,34 @@ const GameList = () => {
     allGames();
   }, []);
 
+  useEffect(() => {
+    setFilteredGames(
+      games.filter((game) =>
+        game.name.toLowerCase().includes(search.toLowerCase())
+      )
+    );
+  }, [search, games]);
+
+  if (loading) {
+    return <p>Loading games...</p>;
+  }
+
   return (
     <div className="gameList">
       <h2 className="gameList__title">Others</h2>
       <div className="gameList__container">
-        {games.map((res) => (
-          <Game
-            key={res.id}
-            name={res.name}
-            price={res.price}
-            cover={res.caratula}
-            link={res.id}
-          />
+        {filteredGames.map((game, idx) => (
+          <GameDetail key={idx} {...game} />
         ))}
       </div>
     </div>
   );
+};
+
+const GameDetail = (props) => {
+  const { id, name, price, caratula } = props;
+
+  return <Game key={id} name={name} price={price} cover={caratula} link={id} />;
 };
 
 export default GameList;

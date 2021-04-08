@@ -6,12 +6,17 @@
     "@testing-library/jest-dom": "^5.11.10",
     "@testing-library/react": "^11.2.6",
     "@testing-library/user-event": "^12.8.3",
+    "animate.css": "^4.1.1",
     "firebase": "^8.3.2",
+    "paypal-checkout": "^4.0.327",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-draggable": "^4.4.3",
+    "react-lottie": "^1.2.3",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "sass": "^1.32.8",
+    "sweetalert2": "^10.16.0",
     "web-vitals": "^1.1.1"
   },
   "scripts": {

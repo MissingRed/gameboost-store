@@ -3,12 +3,35 @@ import { useParams } from "react-router-dom";
 import Sidebar from "../components/sidebar";
 import "../styles/pages/gameOpen.scss";
 import DarkMode from "../components/DarkMode";
+import PaypalCheckoutButton from "../components/paypalCheckoutButton";
+import Loading from "../components/loading";
 
 const GameOpen = () => {
   let { id } = useParams();
   const [game, setGame] = useState({});
   const [loading, setLoading] = useState(true);
   const [notFound, setNotFound] = useState(false);
+
+  const order = {
+    customer: "123456",
+    total: game.Precio,
+    items: [
+      {
+        sku: game._id,
+        name: game.Nombre,
+        price: game.Precio,
+        quantity: 1,
+        currency: "USD",
+      },
+      // {
+      //   sku: "99",
+      //   name: "Camisa JS",
+      //   price: "50.00",
+      //   quantity: 1,
+      //   currency: "USD",
+      // },
+    ],
+  };
 
   useEffect(() => {
     fetch(`http://localhost:1337/juegos/${id}`)
@@ -41,9 +64,9 @@ const GameOpen = () => {
         {notFound ? (
           "404"
         ) : loading ? (
-          "Cargando..."
+          <Loading />
         ) : (
-          <div className="gameOpen">
+          <div className="gameOpen animate__animated animate__fadeIn animate__faster">
             {/* <h1>{game.Nombre}</h1>
                 <p>{game.Descripcion}</p>
                 <p>{game.Precio}</p>
@@ -69,6 +92,12 @@ const GameOpen = () => {
                   className="gameOpen__figure__shadow__img"
                 />
                 <p>{game.Descripcion}</p>
+                <p className="gameOpen__figure__shadow__price">
+                  US$ {game.Precio}
+                </p>
+                <div className="gameOpen__figure__shadow__paypal">
+                  <PaypalCheckoutButton order={order} />
+                </div>
               </div>
               <div className="gameOpen__figure__lateral">
                 <div className="gameOpen__figure__lateral__darkMode">
