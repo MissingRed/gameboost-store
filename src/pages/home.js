@@ -1,12 +1,33 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/pages/home.scss";
 import Sidebar from "../components/sidebar";
 import DarkMode from "../components/DarkMode";
 import GameList from "../components/gameList";
+import Loading from "../components/loading";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const [search, setSearch] = useState("");
+  const [prim, setPrim] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [notFound, setNotFound] = useState(false);
 
+  const primarios = () => {
+    fetch("http://localhost:1337/primarios")
+      .then((res) => res.json())
+      .then((data) => {
+        setPrim(data[0].juegos);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.log(err);
+        setNotFound(true);
+      });
+  };
+
+  useEffect(() => {
+    primarios();
+  }, []);
   return (
     <>
       <div className="home ">
@@ -41,64 +62,87 @@ const Home = () => {
               </div>
               <DarkMode />
             </div>
-            <div className="home__content__topSection">
-              <div className="home__content__topSection__item">
-                <div className="home__content__topSection__item__figure">
-                  <img
-                    src="img/forza.jpg"
-                    alt="product"
-                    className="home__content__topSection__item__figure__img"
-                  />
+            {notFound ? (
+              "404"
+            ) : loading ? (
+              <Loading />
+            ) : (
+              <>
+                <div className="home__content__topSection">
+                  <Link
+                    className="home__content__topSection__item"
+                    to={`/Game/${prim[0].id}`}
+                  >
+                    <div className="home__content__topSection__item__figure">
+                      <img
+                        src={`http://localhost:1337${prim[0].Banner.url}`}
+                        alt="product"
+                        className="home__content__topSection__item__figure__img"
+                      />
+                    </div>
+                    <div className="home__content__topSection__item__text">
+                      {prim[0].Nombre}
+                    </div>
+                  </Link>
+                  <Link
+                    className="home__content__topSection__item"
+                    to={`/Game/${prim[1].id}`}
+                  >
+                    <div className="home__content__topSection__item__figure">
+                      <img
+                        src={`http://localhost:1337${prim[1].Banner.url}`}
+                        alt="product"
+                        className="home__content__topSection__item__figure__img"
+                      />
+                    </div>
+                    <div className="home__content__topSection__item__text">
+                      {prim[1].Nombre}
+                    </div>
+                  </Link>
+                  <Link
+                    className="home__content__topSection__item"
+                    to={`/Game/${prim[2].id}`}
+                  >
+                    <div className="home__content__topSection__item__figure">
+                      <img
+                        src={`http://localhost:1337${prim[2].Banner.url}`}
+                        alt="product"
+                        className="home__content__topSection__item__figure__img"
+                      />
+                    </div>
+                    <div className="home__content__topSection__item__text">
+                      {prim[2].Nombre}
+                    </div>
+                  </Link>
                 </div>
-                <div className="home__content__topSection__item__text">
-                  Forza Horizon 4
+                <div className="home__content__bottomSection">
+                  <Link
+                    className="home__content__bottomSection__item"
+                    to={`/Game/${prim[3].id}`}
+                  >
+                    <div className="home__content__bottomSection__item__figure">
+                      <img
+                        src={`http://localhost:1337${prim[3].Banner.url}`}
+                        alt="product"
+                        className="home__content__bottomSection__item__figure__img"
+                      />
+                    </div>
+                  </Link>
+                  <Link
+                    className="home__content__bottomSection__item"
+                    to={`/Game/${prim[4].id}`}
+                  >
+                    <div className="home__content__bottomSection__item__figure">
+                      <img
+                        src={`http://localhost:1337${prim[4].Banner.url}`}
+                        alt="product"
+                        className="home__content__bottomSection__item__figure__img"
+                      />
+                    </div>
+                  </Link>
                 </div>
-              </div>
-              <div className="home__content__topSection__item">
-                <div className="home__content__topSection__item__figure">
-                  <img
-                    src="img/cyber.jpg"
-                    alt="product"
-                    className="home__content__topSection__item__figure__img"
-                  />
-                </div>
-                <div className="home__content__topSection__item__text">
-                  Cyberpunk 2077
-                </div>
-              </div>
-              <div className="home__content__topSection__item">
-                <div className="home__content__topSection__item__figure">
-                  <img
-                    src="img/fall.jpg"
-                    alt="product"
-                    className="home__content__topSection__item__figure__img"
-                  />
-                </div>
-                <div className="home__content__topSection__item__text">
-                  Fall Guys: Ultimate Knockout
-                </div>
-              </div>
-            </div>
-            <div className="home__content__bottomSection">
-              <div className="home__content__bottomSection__item">
-                <div className="home__content__bottomSection__item__figure">
-                  <img
-                    src="img/ass.jpg"
-                    alt="product"
-                    className="home__content__bottomSection__item__figure__img"
-                  />
-                </div>
-              </div>
-              <div className="home__content__bottomSection__item">
-                <div className="home__content__bottomSection__item__figure">
-                  <img
-                    src="img/hit.png"
-                    alt="product"
-                    className="home__content__bottomSection__item__figure__img"
-                  />
-                </div>
-              </div>
-            </div>
+              </>
+            )}
           </div>
           <GameList search={search} />
         </div>

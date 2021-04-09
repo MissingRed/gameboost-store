@@ -66,7 +66,7 @@ const GameOpen = () => {
         ) : loading ? (
           <Loading />
         ) : (
-          <div className="gameOpen animate__animated animate__fadeIn animate__faster">
+          <div className="gameOpen">
             {/* <h1>{game.Nombre}</h1>
                 <p>{game.Descripcion}</p>
                 <p>{game.Precio}</p>
@@ -79,6 +79,7 @@ const GameOpen = () => {
                 alt="Banner"
                 className="gameOpen__img"
               /> */}
+
             <div
               className="gameOpen__figure"
               style={{
@@ -91,7 +92,9 @@ const GameOpen = () => {
                   alt="Caratula"
                   className="gameOpen__figure__shadow__img"
                 />
-                <p>{game.Descripcion}</p>
+                <p className="gameOpen__figure__shadow__description">
+                  {game.Descripcion}
+                </p>
                 <p className="gameOpen__figure__shadow__price">
                   US$ {game.Precio}
                 </p>
@@ -114,7 +117,9 @@ const GameOpen = () => {
                 </li>
               </ul>
             </div>
-            <div className="gameOpen__info"></div>
+            <div className="gameOpen__info">
+              <p className="gameOpen__info__title">Resumen</p>
+            </div>
           </div>
         )}
       </div>

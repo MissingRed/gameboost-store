@@ -62,7 +62,8 @@
     &__user {
       display: flex;
       align-items: center;
-      background: #48484870;
+      background: var(--user-background);
+      color: white;
       padding: 1.25rem;
       justify-content: space-between;
       @include tablet {
@@ -89,6 +90,12 @@
       }
       &__up {
         width: 23px;
+        cursor: pointer;
+      }
+      &__svg {
+        width: 25px;
+        stroke: var(--text-color-search);
+        height: 100%;
         cursor: pointer;
       }
       &__modal {

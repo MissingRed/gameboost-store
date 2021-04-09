@@ -37,6 +37,7 @@ body.light {
     --background-color: var(--white);
     --text-color: var(--black);
     --backgroud-grey-white: var(--blue-white);
+    --user-background: #767884;
     --input-login: #767884c0;
     --login-background: white;
     --text-color-search: var(--white);
@@ -51,6 +52,7 @@ body.dark {
     --background-color: var(--black);
     --text-color: var(--white);
     --backgroud-grey-white: var(--white);
+    --user-background: #48484870;
     --input-login: #484848;
     --text-color-search: var(--font-sidebar);
     --login-background: #202020;
