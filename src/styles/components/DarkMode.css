@@ -36,8 +36,9 @@
 body.light {
     --background-color: var(--white);
     --text-color: var(--black);
+    --text-color-invert: var(--white);
     --backgroud-grey-white: var(--blue-white);
-    --user-background: #767884;
+    --user-background: #76788470;
     --input-login: #767884c0;
     --login-background: white;
     --text-color-search: var(--white);
@@ -51,6 +52,7 @@ body.light {
 body.dark {
     --background-color: var(--black);
     --text-color: var(--white);
+    --text-color-invert: var(--black);
     --backgroud-grey-white: var(--white);
     --user-background: #48484870;
     --input-login: #484848;
