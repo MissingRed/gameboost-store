@@ -15,15 +15,9 @@ const ErrorPage = () => {
 
   return (
     <>
-      <div className="home">
-        <div className="home__sidebar">
-          <Sidebar />
-        </div>
-
-        <div className="error">
-          <div className="error__animation">
-            <Lottie options={{ animationData: errorItem, ...defaultOptions }} />
-          </div>
+      <div className="error">
+        <div className="error__animation">
+          <Lottie options={{ animationData: errorItem, ...defaultOptions }} />
         </div>
       </div>
     </>

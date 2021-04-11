@@ -63,9 +63,9 @@
       display: flex;
       align-items: center;
       // background: var(--user-background);
-      background: var(--text-color);
-      color: var(--text-color-invert);
-      padding: 1rem;
+      // background: var(--text-color);
+      color: var(--text-color);
+      padding: 1.25rem 1rem 1.25rem 1rem;
       justify-content: space-between;
       @include tablet {
         display: none;
@@ -95,8 +95,7 @@
       }
       &__svg {
         width: 25px;
-        stroke: var(--text-color-invert);
-
+        stroke: #feb100;
         height: 100%;
         cursor: pointer;
       }
