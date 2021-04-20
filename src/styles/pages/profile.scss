@@ -1,0 +1,83 @@
+.profile {
+  width: 100%;
+  min-height: 100vh;
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  &__account {
+    width: 100%;
+    max-width: 70rem;
+    margin-top: 3rem;
+    &__banner {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 2rem;
+
+      &__logo {
+        width: 40px;
+        height: 40px;
+        background: royalblue;
+        border-radius: 7px;
+        margin-right: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      &__container {
+        &__title {
+          margin: 0;
+          font-weight: bold;
+          font-size: 0.9rem;
+        }
+        &__text {
+          margin: 0;
+          font-size: 0.9rem;
+        }
+      }
+    }
+    &__info {
+      width: 100%;
+      background: #f2f5fa;
+      border-radius: 7px;
+      padding: 2rem;
+      &__user {
+        display: flex;
+        align-items: center;
+        &__img {
+          width: 50px;
+          height: 50px;
+          border-radius: 7px;
+          margin-right: 1rem;
+        }
+        &__title {
+          margin: 0;
+          font-weight: bold;
+          font-size: 0.9rem;
+        }
+        &__text {
+          margin: 0;
+          font-size: 0.8rem;
+        }
+      }
+      &__email {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        &__title {
+          margin: 0;
+          font-size: 0.9rem;
+        }
+        &__text {
+          margin: 0;
+          font-size: 0.9rem;
+          font-weight: bold;
+        }
+      }
+      &__hr {
+        border: 0;
+        border-top: 1.5px solid #76788448;
+      }
+    }
+  }
+}

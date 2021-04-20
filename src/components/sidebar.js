@@ -43,7 +43,10 @@ const Sidebar = () => {
                 alt="profile"
                 className="sidebar__container__list__item__img"
               />
-              <NavLink to="/" className="sidebar__container__list__item__a">
+              <NavLink
+                to="/profile"
+                className="sidebar__container__list__item__a"
+              >
                 Profile
               </NavLink>
             </li>
