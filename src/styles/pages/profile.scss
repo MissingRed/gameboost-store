@@ -1,14 +1,17 @@
 .profile {
   width: 100%;
   min-height: 100vh;
-  padding: 1.25rem;
+
   display: flex;
   align-items: center;
   flex-direction: column;
+
   &__account {
     width: 100%;
     max-width: 70rem;
-    margin-top: 3rem;
+    margin-top: 1rem;
+    padding: 1.25rem;
+
     &__banner {
       display: flex;
       align-items: center;
@@ -16,9 +19,9 @@
       margin-bottom: 2rem;
 
       &__logo {
-        width: 40px;
-        height: 40px;
-        background: royalblue;
+        width: 50px;
+        height: 50px;
+        background: #feb100;
         border-radius: 7px;
         margin-right: 1rem;
         display: flex;
@@ -29,17 +32,18 @@
         &__title {
           margin: 0;
           font-weight: bold;
-          font-size: 0.9rem;
+          font-size: 1rem;
         }
         &__text {
           margin: 0;
-          font-size: 0.9rem;
+          font-size: 1rem;
+          color: #767884;
         }
       }
     }
     &__info {
       width: 100%;
-      background: #f2f5fa;
+      background: var(--input-login);
       border-radius: 7px;
       padding: 2rem;
       &__user {
@@ -54,11 +58,12 @@
         &__title {
           margin: 0;
           font-weight: bold;
-          font-size: 0.9rem;
+          font-size: 1rem;
         }
         &__text {
           margin: 0;
-          font-size: 0.8rem;
+          font-size: 0.9rem;
+          color: #767884;
         }
       }
       &__email {
@@ -66,11 +71,12 @@
         margin-bottom: 1rem;
         &__title {
           margin: 0;
-          font-size: 0.9rem;
+          color: #767884;
+          font-size: 1rem;
         }
         &__text {
           margin: 0;
-          font-size: 0.9rem;
+          font-size: 1rem;
           font-weight: bold;
         }
       }

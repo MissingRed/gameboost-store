@@ -3,8 +3,8 @@
 .gameOpen {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 2fr 60px 1fr;
-  height: 100vh;
+  grid-template-rows: 2fr 70px auto;
+  // height: 100vh;
 
   &__figure {
     background-size: cover;
@@ -65,25 +65,39 @@
     }
   }
   &__options {
-    background: #202020;
-    color: white;
+    // background: #202020;
+    background: var(--filer);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+    position: sticky;
+    top: 0px;
     @include tablet {
       display: none;
     }
     &__list {
       margin: 0;
       padding: 0;
+      width: 700px;
       height: 100%;
-      display: flex;
+      display: grid;
+      grid-template-rows: 1fr;
+      grid-template-columns: repeat(3, 1fr);
       align-items: center;
       padding-left: 3rem;
       padding-right: 3rem;
 
       &__item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
         list-style: none;
-        margin-right: 3rem;
+        // margin-right: 3rem;
         font-size: small;
         letter-spacing: 2px;
+        &.selected {
+          border-bottom: 4px solid #feb100;
+        }
       }
     }
   }
@@ -91,7 +105,14 @@
     padding: 3rem;
     &__title {
       margin: 0;
-      font-size: 1.6rem;
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+    }
+    &__container {
+      padding: 1.5rem;
+      background: var(--input-login);
+      display: flex;
+      justify-content: space-between;
     }
   }
 }

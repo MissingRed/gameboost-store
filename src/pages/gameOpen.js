@@ -110,15 +110,37 @@ const GameOpen = () => {
             </div>
             <div className="gameOpen__options">
               <ul className="gameOpen__options__list">
-                <li className="gameOpen__options__list__item">RESUMEN</li>
-                <li className="gameOpen__options__list__item">DESCRIPCIÓN</li>
+                <li className="gameOpen__options__list__item selected">
+                  RESUME
+                </li>
+                <li className="gameOpen__options__list__item">DESCRIPTION</li>
                 <li className="gameOpen__options__list__item">
-                  REQUISITOS DEL SISTEMA
+                  SYSTEM REQUIREMENTS
                 </li>
               </ul>
             </div>
             <div className="gameOpen__info">
               <p className="gameOpen__info__title">Resumen</p>
+              <div className="gameOpen__info__container">
+                <div className="gameOpen__info__container__section">
+                  <p>Genero</p>
+                  <p>{game.Genero}</p>
+                  <p>Fecha de lanzamiento</p>
+                  <p>{game.Fecha_lanzamiento}</p>
+                  <p>Calificación</p>
+                  <p>{game.Calificacion}</p>
+                  <p>Editor</p>
+                  <p>{game.Editor}</p>
+                </div>
+                <div className="gameOpen__info__container__section">
+                  <p>Desarrollador</p>
+                  <p>{game.Desarrollador}</p>
+                  <p>Idioma</p>
+                  <p>{game.Idiomas}</p>
+                  <p>Enlaces del juego</p>
+                  <p>{game.Mas_info}</p>
+                </div>
+              </div>
             </div>
           </div>
         )}
